@@ -9,6 +9,9 @@
             font-size: 50px;
             font-family: cambria;
         }
+        a{
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
@@ -18,7 +21,15 @@
     <script>
         ans = document.getElementById("ans");
         let res = localStorage.getItem("res");
-        ans.innerHTML = "Ans = " + res;
-    </script></center>
+        if(res == null){
+            ans.innerHTML = "You did not enter a number";
+        }
+        else{
+            ans.innerHTML = "Ans = " + res;
+        }
+        
+    </script>
+    <a href="index.html">Home</a>
+    </center>
 </body>
 </html>
