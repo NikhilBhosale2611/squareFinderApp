@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Square finder</title>
+    <style>
+        *{
+            font-size: 50px;
+            font-family: cambria;
+        }
+        body{
+            background-color: lightgreen;
+        }
+    </style>
+    <script>
+        function find(){
+            event.preventDefault()
+            let num = document.getElementById("num");
+            if(num.value == ""){
+                alert("You did not enter any number");
+                num.focus()
+                return;
+            }
+            else{
+                let n = parseFloat(num.value);
+                let r = n * n;
+                localStorage.setItem("res",r);
+                window.location.href = "result.html";
+            }
+        }
+        
+
+    </script>
+</head>
+<body><center>
+    <form onsubmit="find()">
+        <h1>Square Finder Application</h1>
+        <input type="number" name="" id="num"><br><br>
+        <input type="submit" value="Square">
+    </form>
+</center>
+</body>
+</html>
